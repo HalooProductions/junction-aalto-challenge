@@ -1,15 +1,18 @@
 <template>
   <div id="MapComponent">
     <MapComponent/>
+    <WeatherComponent/>
   </div>
 </template>
 
 <script>
 import MapComponent from './components/MapComponent'
+import WeatherComponent from './components/WeatherComponent'
 export default {
   name: 'app',
   components: {
-    MapComponent
+    MapComponent,
+    WeatherComponent
   }
 }
 </script>
