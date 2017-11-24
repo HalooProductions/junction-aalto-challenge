@@ -1,7 +1,6 @@
 <template>
      <div class="NextStopComponent">
     <h3>{{ msg }}</h3>
-
       <p class="z-depth-4 card-panel blue"  ><b>Seuraava pysäkki:</b></br>Rautatientori</br>2 min</p>
   </div>
   
@@ -22,7 +21,8 @@ export default {
 <style scoped>
 
     .NextStopComponent {
-        text-align: center;
+        font-size: 26px;
+        text-align: left;
         color:white;
         position: fixed;
         top: 1 px;
