@@ -1,15 +1,17 @@
 <template>
-  <div id="app">
+  <div id="MapComponent">
     <MapComponent/>
+    <EnvironmentStaticsComponent/>
   </div>
 </template>
 
 <script>
 import MapComponent from './components/MapComponent'
+import EnvironmentStaticsComponent from './components/EnvironmentStaticsComponent'
 export default {
   name: 'app',
   components: {
-    MapComponent
+    MapComponent, EnvironmentStaticsComponent
   }
 }
 </script>
