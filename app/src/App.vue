@@ -1,15 +1,17 @@
 <template>
-  <div id="app">
+  <div id="MapComponent">
     <MapComponent/>
+    <NextStopComponent/>
   </div>
 </template>
 
 <script>
 import MapComponent from './components/MapComponent'
+import NextStopComponent from './components/NextStopComponent'
 export default {
   name: 'app',
   components: {
-    MapComponent
+    MapComponent, NextStopComponent
   }
 }
 </script>
