@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="MapComponent">
     <MapComponent/>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 </style>
