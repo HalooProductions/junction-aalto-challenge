@@ -34,11 +34,16 @@ function RandomFact()
         top: 10px;
         left: 10px;
         z-index: 99; 
-        border: 2px solid;
         border-radius: 15px; 
-        background-color: #007AC9;     
+        background-color: #007AC9; 
+        padding: 10px;    
     }
     .card-panel {
         background-color: #007AC9;
+    }
+
+    p {
+        color: #FFFFFF;
+        font-family: Roboto;
     }
 </style>
