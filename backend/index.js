@@ -9,7 +9,7 @@ const authStr = 'Bearer 5a07a2f986f30e00015b3cb1b4768fc0e06940ee8c440c550a42fec7
 let app = express();
 
 app.get('/buslocation/:busid', (req, res) => {
-    getBusDataLocation(1612).then(result => {
+    getBusDataLocation(req.params.busid).then(result => {
         console.log(result);
         let stringData = JSON.stringify(result);
         res.send(stringData);
@@ -31,33 +31,6 @@ var server = app.listen(3000, function () {
     
     console.log("Example app listening at http://%s:%s", host, port)
  });
-
-/*const requestHandler = (request, response) => {
-    getBusDataLocation(1612).then(result => {
-        console.log("resulted");
-        console.log(result);
-        let stringData = JSON.stringify(result);
-        response.end(stringData);
-    }).catch(error => {
-        console.log(error);
-    });
-}*/
-
-/*axios.get('http://llb.vtt.fi/LLBDataAPI/GetData?busId=1612', { 'headers': { 'Authorization': authStr } }).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});*/
-
-/*const server = http.createServer(requestHandler);
-
-server.listen(port, (err) => {
-    if (err) {
-        return console.log('something bad happened', err);
-    }
-
-    console.log(`server is listening on ${port}`);
-});*/
 
 const getBusDataLocation = busId => {
     console.log('getBusData');
