@@ -1,31 +1,31 @@
 <template>
-<div class="row">
-  <div class="EnvironmentStatics col s3 push-s9">
-      <p<b>Environmental facts:</b></p>
-      <p>Current engine efficiency: {{ msg }}</p>
+  <div class="row">
+    <div class="OtherBusComponent col s3 push-s9">
+      <p>Vaihtobussendaalenit</p>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 export default {
-  name: 'EnviromentStaticsComponent',
+  name: 'OtherBusComponent',
   data () {
     return {
-      msg: "21%"
+      msg: ''
     }
   }
 }
 </script>
 
-
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .EnvironmentStatics {
+
+    .OtherBusComponent {
         font-size: 26px;
         text-align: left;
         position: fixed;
-        top: 0px;
         right: 10px;
+        top: 5px;
         z-index: 99;
         border-radius: 15px;
         background-color: #007AC9;

@@ -1,9 +1,10 @@
 <template>
-     <div class="NextStopComponent">
-    <h3>{{ msg }}</h3>
-      <p class="z-depth-4 card-panel blue"  ><b>Seuraava pysäkki:</b></br>Rautatientori</br>2 min</p>
+  <div class="row">
+    <div class="NextStopComponent col s3 push-s9">
+      <h3>{{ msg }}</h3>
+      <p><b>Next stop:</b></br>Rautatientori</br>2 min</p>
+    </div>
   </div>
-  
 </template>
 
 <script>
@@ -23,13 +24,19 @@ export default {
     .NextStopComponent {
         font-size: 26px;
         text-align: left;
-        color:white;
         position: fixed;
-        top: 1 px;
+        top: 10px;
         right: 10px;
         z-index: 99;
+        border-radius: 15px;
+        background-color: #007AC9;
+        font-size: 24px;
+        padding: 15px;
     }
-    .z-depth-4 {
-        border-radius:15px
+    p, b {
+        color: #FFFFFF;
+    }
+    .row {
+      margin-right: 10px;
     }
 </style>

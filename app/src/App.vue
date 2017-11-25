@@ -1,29 +1,21 @@
 <template>
   <div id="MapComponent">
     <MapComponent/>
-<<<<<<< HEAD
-    <EnvironmentStaticsComponent/>
-=======
     <NextStopComponent/>
->>>>>>> origin/NextStop
+    <OtherBusComponent/>
+    <EnvironmentStaticsComponent/>
   </div>
 </template>
 
 <script>
 import MapComponent from './components/MapComponent'
-<<<<<<< HEAD
-import EnvironmentStaticsComponent from './components/EnvironmentStaticsComponent'
-export default {
-  name: 'app',
-  components: {
-    MapComponent, EnvironmentStaticsComponent
-=======
 import NextStopComponent from './components/NextStopComponent'
+import EnvironmentStaticsComponent from './components/EnvironmentStaticsComponent'
+import OtherBusComponent from './components/OtherBusComponent'
 export default {
   name: 'app',
   components: {
-    MapComponent, NextStopComponent
->>>>>>> origin/NextStop
+    MapComponent, EnvironmentStaticsComponent, NextStopComponent, OtherBusComponent
   }
 }
 </script>
