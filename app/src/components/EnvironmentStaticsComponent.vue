@@ -2,12 +2,12 @@
 <div class="row">
   <div class="EnvironmentStatics">
       <p>Environmental facts:</p>
-      <p>Current engine efficiency: {{ msg }}</p>
+      <p>Current speed: {{ speed }}</p>
   </div>
 </div>
 </template>
 
-<script>
+<!--<script>
 export default {
   name: 'EnviromentStaticsComponent',
   data () {
@@ -16,6 +16,44 @@ export default {
     }
   }
 }
+</script>-->
+<script>
+    import axios from 'axios';
+
+    export default {
+        data() {
+            return {
+                speed: "",
+            }
+        },
+        mounted() {
+            this.getData().then(() => {
+                console.log(this.speed);
+            });
+            setInterval(() => {
+                this.getData();
+            }, 1000);
+        },
+        methods: {
+            getData() {
+                return new Promise((resolve, reject) => {
+                    let round;
+                    axios.get('/facts').then(response => {
+                       console.log(resData);
+                        let resData = response.data;
+                        round = parseFloat(resData.speed);
+                        this.speed = Math.round(round);
+                        resolve();
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        reject();
+                    });
+                })
+                
+            }
+        }
+    }
 </script>
 
 
