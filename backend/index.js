@@ -9,6 +9,11 @@ const weatherApiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=Helsink
 
 let app = express();
 
+let testCoordinates = {
+    lat: 60.214959827,
+    lon: 24.96679415
+};
+
 app.get('/buslocation/:busid', (req, res) => {
     getBusDataLocation(req.params.busid).then(result => {
         console.log(result);
@@ -32,6 +37,13 @@ app.get('/weather', (req, res) => {
         console.log('rejected');
         res.send(error);
     });
+});
+
+app.get('/testdata', (req, res) => {
+    let data = getTestLocation();
+
+    res.setHeader('Content-Type', 'application/json');
+    res.send(data);
 });
 
 app.use('/static', express.static('static'))
@@ -87,4 +99,12 @@ const getWeatherInfo = () => {
             reject(error);
         });
     });
+}
+
+const getTestLocation = () => {
+    let randomNum = Math.floor(Math.random() * 0.2) + 0.01;
+    testCoordinates.lat += randomNum;
+    testCoordinates.lon += randomNum;
+
+    return testCoordinates;
 }
