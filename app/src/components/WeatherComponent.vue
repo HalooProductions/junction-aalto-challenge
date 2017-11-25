@@ -110,7 +110,7 @@
         right: 10px;
         z-index: 99;
         border-radius: 15px;
-        background-color: #007AC9;
+        background-color: #00B9E4;
         font-size: 24px;
         padding: 15px;
         width: 17%;
