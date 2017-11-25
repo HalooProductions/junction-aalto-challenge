@@ -159,9 +159,7 @@
             jumpToLocation(location)  {
                 this.map.flyTo({center: location});
                 this.marker.setLngLat(location);
-            },
-
-            
+            }
         }
     }
 </script>
