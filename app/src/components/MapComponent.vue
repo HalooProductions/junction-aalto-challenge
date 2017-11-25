@@ -136,7 +136,7 @@
 
                 setTimeout(() => {
                     this.coordinatesFromStart.data.push([-122.49378204345702 -0.00154495239257, 37.83368330777276]);
-                }, 000);
+                }, 1000);
                 this.buildMarkers(data.testData);
             },
 

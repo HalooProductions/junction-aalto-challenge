@@ -3,8 +3,7 @@
     <MapComponent/>
     <WeatherComponent/>
     <div id="infoBox">
-      <NextStopComponent/>
-      <OtherBusComponent/>
+      <SpeedComponent/>
       <EnvironmentStaticsComponent/>
     </div>
   </div>
@@ -12,14 +11,13 @@
 
 <script>
 import MapComponent from './components/MapComponent'
-import NextStopComponent from './components/NextStopComponent'
 import EnvironmentStaticsComponent from './components/EnvironmentStaticsComponent'
-import OtherBusComponent from './components/OtherBusComponent'
+import SpeedComponent from './components/SpeedComponent'
 import WeatherComponent from './components/WeatherComponent'
 export default {
   name: 'app',
   components: {
-    MapComponent, EnvironmentStaticsComponent, NextStopComponent, OtherBusComponent, WeatherComponent
+    MapComponent, EnvironmentStaticsComponent, SpeedComponent, WeatherComponent
   }
 }
 </script>

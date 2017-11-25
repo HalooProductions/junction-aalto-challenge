@@ -9,6 +9,7 @@
 
 <script>
 import axios from 'axios';
+
 export default {
   name: 'EnviromentStaticsComponent',
   data () {
@@ -29,7 +30,8 @@ export default {
         'Current engine efficiency:'
 
       ],
-      fact:"Otters sleep holding hands"
+      fact:"Otters sleep holding hands", 
+      speed: ""
     }
   },
   mounted() {
@@ -37,6 +39,12 @@ export default {
                 this.getFact();
                 this.getEff();
             }, 20000);
+    this.getData().then(() => {
+                console.log(this.speed);
+            });
+            setInterval(() => {
+                this.getData();
+            }, 1000);
   },
   methods: {
     getFact() {
@@ -54,7 +62,24 @@ export default {
                         reject();
                     });
                 })
-    }
+    },
+    getData() {
+                return new Promise((resolve, reject) => {
+                    let round;
+                    axios.get('/facts').then(response => {
+                       console.log(resData);
+                        let resData = response.data;
+                        round = parseFloat(resData.speed);
+                        this.speed = Math.round(round);
+                        resolve();
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        reject();
+                    });
+                })
+                
+            }
 
   }
 }
@@ -70,17 +95,15 @@ export default {
         right: 10px;
         z-index: 99;
         border-radius: 15px;
-        background-color: #007AC9;
+        background-color: #64BE1E;
         font-size: 24px;
         padding: 15px;
-        width: 34%;
+        width: 34.5%;
+        height: 25%;
         
     }
     p, b {
         color: #FFFFFF;
         font-family: Century Gothic;
-    }
-    .row {
-      margin-right: 10px;
     }
 </style>

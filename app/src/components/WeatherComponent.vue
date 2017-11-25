@@ -1,9 +1,9 @@
 <template>
-    <div class="map-container card-panel weatherComponent">
+    <div class="weatherComponent">
         <div>
-            <h4 >Weather</h4>
-            <p><i class="small material-icons">access_time</i> {{ hours }}:{{mins}} :<b> {{weatherNow}}°C</b> <i class="small material-icons">{{i1}}</i></p>
-            <p><i class="small material-icons">access_time</i> {{ hours + 3}}:{{mins}}:<b> {{weather}}°C</b> <i class="small material-icons">{{i2}}</i></p>
+            <p>Weather</p>
+            <p><i class="small material-icons">access_time</i> {{ hours }}:{{mins}} : {{weatherNow}}°C <i class="small material-icons">{{i1}}</i></p>
+            <p><i class="small material-icons">access_time</i> {{ hours + 3}}:{{mins}}: {{weather}}°C <i class="small material-icons">{{i2}}</i></p>
             
         </div>
     </div>
@@ -102,21 +102,23 @@
 </script>
 
 <style>
-.weatherComponent {
-        font-size: 26px;
+    .weatherComponent {
+        font-size: 22px;
         text-align: left;
-        color:white;
         position: fixed;
-        top: 1 px;
-        left: 10px;
+        bottom: 216px;
+        right: 10px;
         z-index: 99;
-        background-color: #007AC9 ;
-        border-radius:15px
+        border-radius: 15px;
+        background-color: #00B9E4;
+        font-size: 24px;
+        padding: 15px;
+        width: 17%;
+        height: 30%;
+        
     }
-/*
-    .message { font-weight: 500;}
-    
-    .map-container { position: fixed; z-index: 99; width:20%; height: 15%; border-radius: 25px; background-color: #3875d8; font: white; text-align: left;}
-    .font-color{color: white; font-family: "Roboto";  font-size: 40px; position: relative; text-align: center; line-height: 0.3%; text-align: left;}
-    .tier { position: relative; z-index: 99;  }*/
+    p, b {
+        color: #FFFFFF;
+        font-family: Century Gothic;
+    }
 </style>
