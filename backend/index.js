@@ -17,6 +17,12 @@ let testCoordinates = {
     lon: 24.96679415
 };
 
+let busRoutes = [
+    { bus: 1612, route: 23 },
+    { bus: 3008, route: 55 },
+    { bus: 3009, route: 55 }
+];
+
 app.get('/buslocation/:busid', (req, res) => {
     getBusDataLocation(req.params.busid).then(result => {
         console.log(result);
@@ -49,6 +55,7 @@ app.get('/testdata', (req, res) => {
     res.send(data);
 });
 
+
 /*FAKTABOXI*/
 app.get('/facts', (req, res) => {
     getFacts().then(result => {
@@ -77,10 +84,12 @@ app.get('/nextstop/:name', (req, res) => {
         method: 'post', 
         headers: { 'Content-Type': 'application/graphql' },
         data: `{
-            pattern(id:"HSL:1023:1:01") {
+            pattern(id:"HSL:1055:1:01") {
               name
               stops{
-                name  
+                name
+                lat
+                lon 
               }
             }
           }`
@@ -89,11 +98,78 @@ app.get('/nextstop/:name', (req, res) => {
     axios(configGraphQL).then(response => {
         console.log('graphql response:', response.data); 
         let stopData = JSON.stringify(response.data);
+        res.setHeader('Content-Type', 'application/json');
         res.send(stopData);
     }).catch(err => {
         console.log('graphql error:', err);
     });
 });
+
+app.get('/motorefficiency/:busid', (req, res) => {
+    getMotorEfficiency(req.params.busid).then(result => {
+        res.send(result);
+    });
+});
+
+app.get('/routeinformation/:busid', (req, res) => {
+    let route = null;
+    for (let i = 0; i < busRoutes.length; i++) {
+        if (busRoutes[i].bus === parseInt(req.params.busid)) {
+            route = busRoutes[i];   
+        }
+    }
+    
+    if (!route) {
+        res.send('route not found');
+    } else {
+        getRouteInformation(route).then(result => {
+            res.setHeader('Content-Type', 'application/json');
+            res.send(result);
+        });
+    }
+});
+
+const getMotorEfficiency = bus => {
+    return new Promise((resolve, reject) => {
+        axios.get(baseApiUrl + busDataUrl + bus, { 'headers':  { 'Authorization': authStr } }).then(result => {
+            resolve(result.data[`fi/llb/bus/${bus}/can/`].EFFICIENCY_Efficiency);
+        })
+        .catch(err => {
+            reject(err);
+        });
+    });
+};
+
+const getRouteInformation = (route) => {
+    return new Promise((resolve, reject) => {
+        let configGraphQL = {
+            url: 'http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql',
+            method: 'post', 
+            headers: { 'Content-Type': 'application/graphql' },
+            data: `{
+                routes(name: "${route.route}", modes: "BUS") {
+                  stops {
+                    lat,
+                    lon,
+                    name
+                  }
+                  shortName
+                  longName
+                  desc
+                }
+              }`
+        };
+    
+        axios(configGraphQL).then(response => {
+            console.log('graphql response:', response.data); 
+            let stopData = JSON.stringify(response.data.data.routes[0]);
+            resolve(stopData);
+        }).catch(err => {
+            console.log('graphql error:', err);
+            reject(err);
+        });
+    });
+};
 
 var server = app.listen(3000, function () {
     var host = server.address().address
