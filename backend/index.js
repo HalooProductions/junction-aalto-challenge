@@ -89,6 +89,12 @@ app.get('/nextstop/:name', (req, res) => {
     });
 });
 
+app.get('/motorefficiency/:busid', (req, res) => {
+    getMotorEfficiency(req.params.busid).then(result => {
+        res.send(result);
+    });
+});
+
 app.get('/routeinformation/:busid', (req, res) => {
     let route = null;
     for (let i = 0; i < busRoutes.length; i++) {
@@ -106,6 +112,17 @@ app.get('/routeinformation/:busid', (req, res) => {
         });
     }
 });
+
+const getMotorEfficiency = bus => {
+    return new Promise((resolve, reject) => {
+        axios.get(baseApiUrl + busDataUrl + bus, { 'headers':  { 'Authorization': authStr } }).then(result => {
+            resolve(result.data[`fi/llb/bus/${bus}/can/`].EFFICIENCY_Efficiency);
+        })
+        .catch(err => {
+            reject(err);
+        });
+    });
+};
 
 const getRouteInformation = (route) => {
     return new Promise((resolve, reject) => {
