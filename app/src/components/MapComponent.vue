@@ -32,5 +32,9 @@
 
 <style>
     body { margin:0; padding:0; }
+<<<<<<< HEAD
     #map { position:absolute; top:0; bottom:0; width:100%; height: 100%; z-index: 1; }
+=======
+    #map { position:absolute; top:100; bottom:0; width:100%; height: 100%; z-index: 1; }
+>>>>>>> origin/NextStop
 </style>

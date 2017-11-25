@@ -1,17 +1,29 @@
 <template>
   <div id="MapComponent">
     <MapComponent/>
+<<<<<<< HEAD
     <EnvironmentStaticsComponent/>
+=======
+    <NextStopComponent/>
+>>>>>>> origin/NextStop
   </div>
 </template>
 
 <script>
 import MapComponent from './components/MapComponent'
+<<<<<<< HEAD
 import EnvironmentStaticsComponent from './components/EnvironmentStaticsComponent'
 export default {
   name: 'app',
   components: {
     MapComponent, EnvironmentStaticsComponent
+=======
+import NextStopComponent from './components/NextStopComponent'
+export default {
+  name: 'app',
+  components: {
+    MapComponent, NextStopComponent
+>>>>>>> origin/NextStop
   }
 }
 </script>
