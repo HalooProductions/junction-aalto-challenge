@@ -45,16 +45,11 @@ app.get('/nextstop/:name', (req, res) => {
 
     axios(configGraphQL).then(response => {
         console.log('graphql response:', response.data); 
-               let stopData = JSON.stringify(response.data);
+        let stopData = JSON.stringify(response.data);
         res.send(stopData);
     }).catch(err => {
         console.log('graphql error:', err);
     });
-
-
-
-    //console.log(result);
-    //res.send(response.data);
 });
 
 var server = app.listen(3000, function () {
