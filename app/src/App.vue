@@ -2,17 +2,24 @@
   <div id="MapComponent">
     <MapComponent/>
     <WeatherComponent/>
+    <div id="infoBox">
+      <NextStopComponent/>
+      <OtherBusComponent/>
+      <EnvironmentStaticsComponent/>
+    </div>
   </div>
 </template>
 
 <script>
 import MapComponent from './components/MapComponent'
+import NextStopComponent from './components/NextStopComponent'
+import EnvironmentStaticsComponent from './components/EnvironmentStaticsComponent'
+import OtherBusComponent from './components/OtherBusComponent'
 import WeatherComponent from './components/WeatherComponent'
 export default {
   name: 'app',
   components: {
-    MapComponent,
-    WeatherComponent
+    MapComponent, EnvironmentStaticsComponent, NextStopComponent, OtherBusComponent, WeatherComponent
   }
 }
 </script>
