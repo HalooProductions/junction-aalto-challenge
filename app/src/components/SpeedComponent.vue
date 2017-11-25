@@ -1,21 +1,12 @@
 <template>
-<div class="row">
-  <div class="EnvironmentStatics">
-      <p>Environmental facts:</p>
+  <div class="row">
+    <div class="SpeedComponent">
+      <p>Current speed</p>
+      <p>{{ speed }} km/h</p>
+    </div>
   </div>
-</div>
 </template>
 
-<!--<script>
-export default {
-  name: 'EnviromentStaticsComponent',
-  data () {
-    return {
-      msg: "21%"
-    }
-  }
-}
-</script>-->
 <script>
     import axios from 'axios';
 
@@ -55,25 +46,28 @@ export default {
     }
 </script>
 
-
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .EnvironmentStatics {
+
+    .SpeedComponent {
         font-size: 22px;
         text-align: left;
         position: fixed;
-        bottom: 10px;
-        right: 10px;
+        right: 290px;
+        bottom: 216px;
         z-index: 99;
         border-radius: 15px;
         background-color: #007AC9;
         font-size: 24px;
         padding: 15px;
-        width: 34.5%;
-        height: 25%;
-        
+        width: 17%;
+        height: 30%;
     }
     p, b {
         color: #FFFFFF;
         font-family: Century Gothic;
+    }
+    .row {
+      margin-right: 10px;
     }
 </style>
