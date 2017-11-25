@@ -34,7 +34,8 @@ app.get('/weather', (req, res) => {
     });
 });
 
-app.use('/static', express.static('static'));
+app.use('/static', express.static('static'))
+app.use('/materialize', express.static('materialize'));
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('index.html'));
