@@ -20,11 +20,10 @@
 
                 var map = new mapboxgl.Map({
                     container: 'map', // container id
-                    style: 'mapbox://styles/mapbox/streets-v10', // stylesheet location
-                    center: [-74.50, 40], // starting position [lng, lat]
-                    zoom: 9 // starting zoom
+                    style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+                    center: [24.945831, 60.192059], // starting position [lng, lat]
+                    zoom: 14 // starting zoom
                 });
-                map.resize();
             }
         }
     }
