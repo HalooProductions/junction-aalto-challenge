@@ -1,10 +1,8 @@
 <template>
-  <div class="row">
-    <div class="NextStopComponent col s3 push-s9">
-      <h3>{{ msg }}</h3>
-      <p><b>Next stop:</b></br>Rautatientori</br>2 min</p>
+    <div class="NextStopComponent">
+      <p>Next stop:<hr></p>
+      <p>{{ msg }}</p>
     </div>
-  </div>
 </template>
 
 <script>
@@ -12,7 +10,7 @@ export default {
   name: 'NextStopComponent',
   data () {
     return {
-      msg: ''
+      msg: 'Rautatientori, 2min'
     }
   }
 }
@@ -22,7 +20,7 @@ export default {
 <style scoped>
 
     .NextStopComponent {
-        font-size: 26px;
+        font-size: 22px;
         text-align: left;
         position: fixed;
         top: 10px;
@@ -32,11 +30,18 @@ export default {
         background-color: #007AC9;
         font-size: 24px;
         padding: 15px;
+        width: 34%;   
     }
     p, b {
         color: #FFFFFF;
+        font-family: Century Gothic;
     }
     .row {
       margin-right: 10px;
+    }
+    hr {
+      border: 2px solid;
+      color: #FFFFFF;
+      border-radius: 15px;
     }
 </style>

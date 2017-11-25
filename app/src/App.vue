@@ -1,9 +1,11 @@
 <template>
   <div id="MapComponent">
     <MapComponent/>
-    <NextStopComponent/>
-    <OtherBusComponent/>
-    <EnvironmentStaticsComponent/>
+    <div id="infoBox">
+      <NextStopComponent/>
+      <OtherBusComponent/>
+      <EnvironmentStaticsComponent/>
+    </div>
   </div>
 </template>
 
