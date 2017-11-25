@@ -1,6 +1,6 @@
 <template>
-  <div class="EnvironmentStatics">
-      <p>LOLOLOLOLOLOLOL</p>
+  <div class="EnvironmentStatics z-depth-4">
+      <p>Moottorin hyötysuhde tällä hetkellä:</p>
       <p>{{ msg }}</p>
   </div>
 </template>
@@ -10,40 +10,29 @@ export default {
   name: 'EnviromentStaticsComponent',
   data () {
     return {
-      msg: RandomFact()
+      msg: "21%"
     }
   }
-}
-
-function RandomFact()
-{
-    var facts = [
-        "25 minuuttia kuluttaa Helsingin seudun asiakas päivittäin joukkoliikenteessä. kaiken kaikkiaan hän käyttää matkustamiseen tunnin ja 13 minuuttia päivässä.",
-        "92 250 ihmistä matkustaa Helsingin keskustaan arkiaamuna klo 6-9. Heistä 73,6 % kulkee joukkoliikenteellä.",
-        "Runkolinja 550 on suosituin bussilinja. Sitä käyttää 16 000 matkustajaa päivässä."
-    ]
-
-    return facts[Math.floor((Math.random() * 3) + 0)];
 }
 </script>
 
 
 <style scoped>
     .EnvironmentStatics {
+        font-size: 26px;
+        text-align: left;
         position: fixed;
         top: 10px;
-        left: 10px;
-        z-index: 99; 
-        border-radius: 15px; 
-        background-color: #007AC9; 
-        padding: 10px;    
-    }
-    .card-panel {
+        right: 10px;
+        z-index: 99;
+        border-radius: 15px;
         background-color: #007AC9;
+        font-size: 24px;
+        padding: 15px;
     }
+
 
     p {
         color: #FFFFFF;
-        font-family: Roboto;
     }
 </style>
