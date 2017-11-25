@@ -1,15 +1,23 @@
 <template>
-  <div id="app">
+  <div id="MapComponent">
     <MapComponent/>
+    <div id="infoBox">
+      <NextStopComponent/>
+      <OtherBusComponent/>
+      <EnvironmentStaticsComponent/>
+    </div>
   </div>
 </template>
 
 <script>
 import MapComponent from './components/MapComponent'
+import NextStopComponent from './components/NextStopComponent'
+import EnvironmentStaticsComponent from './components/EnvironmentStaticsComponent'
+import OtherBusComponent from './components/OtherBusComponent'
 export default {
   name: 'app',
   components: {
-    MapComponent
+    MapComponent, EnvironmentStaticsComponent, NextStopComponent, OtherBusComponent
   }
 }
 </script>
