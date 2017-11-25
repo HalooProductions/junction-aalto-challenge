@@ -89,10 +89,10 @@ app.get('/nextstop/:name', (req, res) => {
     });
 });
 
-app.get('/routeinformation/:route', (req, res) => {
+app.get('/routeinformation/:busid', (req, res) => {
     let route = null;
     for (let i = 0; i < busRoutes.length; i++) {
-        if (busRoutes[i].route === parseInt(req.params.route)) {
+        if (busRoutes[i].bus === parseInt(req.params.busid)) {
             route = busRoutes[i];   
         }
     }
