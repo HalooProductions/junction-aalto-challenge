@@ -3,7 +3,7 @@
         <div>
             <p>Weather</p>
             <p><i class="small material-icons">access_time</i> {{ hours }}:{{mins}} : {{weatherNow}}°C <i class="small material-icons">{{i1}}</i></p>
-            <p><i class="small material-icons">access_time</i> {{ hours + 3}}:{{mins}}: {{weather}}°C <i class="small material-icons">{{i2}}</i></p>
+            <p><i class="small material-icons">access_time</i> {{ parseInt(hours) + 3 }}:{{mins}}: {{weather}}°C <i class="small material-icons">{{i2}}</i></p>
             
         </div>
     </div>
