@@ -100,7 +100,7 @@
                                 "properties": {},
                                 "geometry": {
                                     "type": "LineString",
-                                    "coordinates":  this.coordinatesFromStart.data 
+                                    "coordinates":  this.coords 
                                 }
                             }
                         },
