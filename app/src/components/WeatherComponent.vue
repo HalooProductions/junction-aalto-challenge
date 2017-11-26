@@ -106,7 +106,7 @@
         font-size: 22px;
         text-align: left;
         position: fixed;
-        bottom: 216px;
+        bottom: 235px;
         right: 10px;
         z-index: 99;
         border-radius: 15px;
@@ -119,6 +119,6 @@
     }
     p, b {
         color: #FFFFFF;
-        font-family: Century Gothic;
+        font-family: "Roboto";
     }
 </style>

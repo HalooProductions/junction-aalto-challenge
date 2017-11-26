@@ -98,12 +98,12 @@ export default {
         background-color: #64BE1E;
         font-size: 24px;
         padding: 15px;
-        width: 34.5%;
+        width: 33%;
         height: 25%;
         
     }
     p, b {
         color: #FFFFFF;
-        font-family: Century Gothic;
+        font-family: "Roboto";
     }
 </style>

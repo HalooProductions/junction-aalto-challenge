@@ -36,7 +36,6 @@
                     await new Promise(resolve => {
                         axios.get('/buslocation/3009')
                         .then((response) => {
-                            this.coordinatesFromStart.push([response.data.lon, response.data.lat]);
                             this.jumpToLocation([response.data.lon, response.data.lat]);
                         })
                         .catch((response) => {
@@ -88,7 +87,6 @@
                     center: data.coordinates, // starting position [lng, lat]
                     zoom: 14 // starting zoom
                 });
-                console.log(this.coordinatesFromStart.data);
                 this.map.on('load', () => {
                     this.map.addLayer({
                         "id": "route",

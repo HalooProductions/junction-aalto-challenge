@@ -53,19 +53,19 @@
         font-size: 22px;
         text-align: left;
         position: fixed;
-        right: 290px;
-        bottom: 216px;
+        right: 375px;
+        bottom: 235px;
         z-index: 99;
         border-radius: 15px;
         background-color: #007AC9;
         font-size: 24px;
         padding: 15px;
-        width: 17%;
+        width: 13%;
         height: 30%;
     }
     p, b {
         color: #FFFFFF;
-        font-family: Century Gothic;
+        font-family: "Roboto";
     }
     .row {
       margin-right: 10px;
